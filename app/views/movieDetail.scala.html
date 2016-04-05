@@ -1,0 +1,33 @@
+@* ranking Template File *@
+@(movie: Movie)
+
+@main("Movie Detail") {
+    <div class="page-header">
+        <h1>@movie.name</h1>
+    </div>
+    <button type="button" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> お気に入り
+    </button>
+
+    <table class="">
+    <tr>
+    <td class="success">
+        <h3>ジャンル</h3> @movie.genre
+        <h3>俳優</h3> @movie.actor など
+        <h3>主なシーン</h3> @movie.scene
+    </td>
+    <td class="active">
+        <img src="@movie.img_url">
+    </td>
+    </tr>
+    <tr class="success">
+        <td colspan="2">
+            <h3>説明</h3>
+            @movie.description
+        </td>
+    </tr>
+    </table>
+
+
+
+}

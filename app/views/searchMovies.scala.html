@@ -1,0 +1,29 @@
+@(message: String, searchForm: Form[SearchMovies.SearchForm])
+
+
+@import helper._
+
+@main("Movie Search") {
+	<div class="page-header">
+        <h1>@message</h1>
+    </div>
+    <div class="container">
+		@form(action = routes.SearchMovies.search) {
+	
+		    @inputText(
+		    	searchForm( "genre" ),
+		    	'_label -> "ジャンル"
+		   	)
+		   	@inputText(
+		   		searchForm( "actor" ),
+		   		'_label -> "俳優"
+			)
+			@inputText(
+				searchForm( "scene" ),
+				'_label -> "シーン"
+			)
+	
+			<input type="submit" class="btn btn-primary">
+		}
+   	</div>
+}
